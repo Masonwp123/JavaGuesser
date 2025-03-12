@@ -34,9 +34,16 @@ public class JavaGuesserRecursive {
     System.out.println("1) Human Guesser");
     System.out.println("2) Computer Guesser");
 
+    System.out.println();
+    System.out.print("Please Enter 0-2: ");
+
     //get choice
     Scanner input = new Scanner(System.in);
-    return input.nextLine();
+    String choice = input.nextLine();
+
+    System.out.println();
+
+    return choice;
   }
 
   public void humanGuesser() {
