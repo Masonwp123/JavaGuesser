@@ -115,7 +115,7 @@ public class JavaGuesserRecursive {
     //query user about the number
     System.out.println(guess);
     System.out.println(String.valueOf(round) + ") Too (H)igh, too (L)ow, or (C)orrect?");
-    String choice = input.nextLine();
+    String choice = input.nextLine().toLowerCase();
         
     if (choice.equals("h")) {
         //this means the number is too high, so the upper limit should be the current guess
