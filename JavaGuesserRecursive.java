@@ -59,7 +59,7 @@ public class JavaGuesserRecursive {
     }
   }
 
-  public int humanGuesser(int correct, Integer round) {
+  public int humanGuesser(int correct, int round) {
     
     Scanner input = new Scanner(System.in);
     
