@@ -50,7 +50,6 @@ String printMenu():
 	print "0) Exit"
 	print "1) Human Guesser"
 	print "2) Computer Guesser"
-	make boolean keepGoing
 	get input from player as choice
 	return choice
 ```
