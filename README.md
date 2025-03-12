@@ -1,4 +1,6 @@
 # JavaGuesser
+use 'make run' to run the standard version
+use 'make runR' to run the recursive version
 
 ## Thoughts
 
