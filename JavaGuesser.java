@@ -63,6 +63,8 @@ public class JavaGuesser {
         } catch (NumberFormatException exception) {
             //if not a number, user will retry
             System.out.println("That is not a number!");
+            //subtract round to keep same round number
+            round--;
             continue;
         }
 
