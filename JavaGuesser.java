@@ -43,12 +43,15 @@ public class JavaGuesser {
     //get an answer between 1 and 100
     int correct = (int)(Math.floor(Math.random() * 100) + 1);
     
-    int round = 1;
+    int round = 0;
     boolean keepGoing = true;
     
     Scanner input = new Scanner(System.in);
     
     while (keepGoing) {
+        //increment round
+        round++;
+
         //get guess
         System.out.print(String.valueOf(round) + ") Please Enter a number: ");
         String guess = input.nextLine();
@@ -72,7 +75,15 @@ public class JavaGuesser {
             System.out.println("Correct!");
             keepGoing = false;
         }
-        round++;
+    }
+
+    System.out.println();
+    if (round < 7) {
+        System.out.println("Fantastic Job!");
+    } else if ( round == 7) {
+        System.out.println("Well done.");
+    } else {
+        System.out.println("Maybe you should try again...");
     }
   }
 
@@ -89,9 +100,12 @@ public class JavaGuesser {
     
     Scanner input = new Scanner(System.in);
 
-    int round = 1;
+    int round = 0;
     boolean keepGoing = true;
     while (keepGoing) {
+        //increment round
+        round++;
+
         //query user about the number
         System.out.println(guess);
         System.out.println(String.valueOf(round) + ") Too (H)igh, too (L)ow, or (C)orrect?");
@@ -116,7 +130,6 @@ public class JavaGuesser {
             System.out.println("There is no correct answer.");
             keepGoing = false;
         }
-        round++;
     }
   }
 

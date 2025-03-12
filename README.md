@@ -72,6 +72,13 @@ void humanGuesser():
 			set keepGoing to false
 		add 1 to round
 
+	if round is less than 7:
+		print "Fantastic Job!"
+	elseif round is 7:
+		print "Well done."
+	else:
+		print "Maybe you should try again..."
+
 ```
 
 **int getMean(int x, int y)**
