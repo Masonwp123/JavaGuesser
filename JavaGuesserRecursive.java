@@ -50,8 +50,6 @@ public class JavaGuesserRecursive {
     //get an answer between 1 and 100
     int correct = (int)(Math.floor(Math.random() * 100) + 1);
 
-    System.out.println(correct);
-
     int round = humanGuesser(correct, 0);
 
     System.out.println(round);
