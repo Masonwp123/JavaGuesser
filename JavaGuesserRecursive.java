@@ -75,10 +75,10 @@ public class JavaGuesserRecursive {
     System.out.print(String.valueOf(round) + ") Please Enter a number: ");
     String guess = input.nextLine();
         
-    //decode guess into an integer
+    //parse guess into an integer
     int guessInt = 0;
     try {
-        guessInt = Integer.decode(guess);
+        guessInt = Integer.parseInt(guess);
     } catch (NumberFormatException exception) {
         //if not a number, user will retry with the same round number
         System.out.println("That is not a number!");
@@ -105,7 +105,8 @@ public class JavaGuesserRecursive {
 
   //default for computerGuesser values
   public void computerGuesser() {
-    computerGuesser(1, 100, 0);
+    //we use values 0 and 101 because these numbers are exclusive
+    computerGuesser(0, 101, 0);
   }
 
   public void computerGuesser(int lower, int upper, int round) {
@@ -137,7 +138,7 @@ public class JavaGuesserRecursive {
     }
 
     //if upper or lower ever equals guess then there is no proper answer
-    if (upper == guess || lower == guess) {
+    if (upper + 1 == guess || lower - 1 == guess) {
         System.out.println("There is no correct answer.");
         return;
     }

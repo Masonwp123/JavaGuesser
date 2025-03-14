@@ -63,10 +63,10 @@ public class JavaGuesser {
         System.out.print(String.valueOf(round) + ") Please Enter a number: ");
         String guess = input.nextLine();
         
-        //decode guess into an integer
+        //parse guess into an integer
         int guessInt = 0;
         try {
-            guessInt = Integer.decode(guess);
+            guessInt = Integer.parseInt(guess);
         } catch (NumberFormatException exception) {
             //if not a number, user will retry
             System.out.println("That is not a number!");
@@ -103,8 +103,9 @@ public class JavaGuesser {
 
   public void computerGuesser() {
     //set initial values and get mean for first guess
-    int lower = 1;
-    int upper = 100;
+    //we use values 0 and 101 because these numbers are exclusive
+    int lower = 0;
+    int upper = 101;
     int guess = getMean(lower, upper);
     
     Scanner input = new Scanner(System.in);
