@@ -143,6 +143,8 @@ public class JavaGuesserRecursive {
         return;
     } else {
         System.out.println("Invalid input, please try again.");
+        //keep round number the same
+        round--;
     }
 
     //if upper or lower ever equals guess then there is no proper answer
