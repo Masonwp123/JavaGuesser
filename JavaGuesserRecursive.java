@@ -47,6 +47,10 @@ public class JavaGuesserRecursive {
   }
 
   public void humanGuesser() {
+
+    System.out.println("The computer has a value between 1 and 100, can you guess it right?");
+    System.out.println();
+
     //get an answer between 1 and 100
     int correct = (int)(Math.floor(Math.random() * 100) + 1);
 
@@ -105,6 +109,10 @@ public class JavaGuesserRecursive {
 
   //default for computerGuesser values
   public void computerGuesser() {
+
+    System.out.println("With a value between 1 and 100 in mind, tell the computer if its guess is right!");
+    System.out.println();
+
     //we use values 0 and 101 because these numbers are exclusive
     computerGuesser(0, 101, 0);
   }
