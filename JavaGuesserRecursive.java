@@ -118,8 +118,14 @@ public class JavaGuesserRecursive {
   }
 
   public void computerGuesser(int lower, int upper, int round) {
-    //set initial values and get mean for first guess
+    //get guess
     int guess = getMean(lower, upper);
+
+    //if upper or lower ever equals guess then there is no proper answer
+    if (upper == guess || lower == guess) {
+        System.out.println("There is no correct answer.");
+        return;
+    }
     
     Scanner input = new Scanner(System.in);
 
@@ -133,26 +139,17 @@ public class JavaGuesserRecursive {
         
     if (choice.equals("h")) {
         //this means the number is too high, so the upper limit should be the current guess
-        upper = guess;
-        guess = getMean(lower, upper);
+        computerGuesser(lower, guess, round);
     } else if (choice.equals("l")) {
         //this means the number is too low, so the lower limit should be the current guess
-        lower = guess;
-        guess = getMean(lower, upper);
+        computerGuesser(guess, upper, round);
     } else if (choice.equals("c")) {
         return;
     } else {
         System.out.println("Invalid input, please try again.");
         //keep round number the same
-        round--;
+        computerGuesser(lower, upper, round - 1);
     }
-
-    //if upper or lower ever equals guess then there is no proper answer
-    if (upper + 1 == guess || lower - 1 == guess) {
-        System.out.println("There is no correct answer.");
-        return;
-    }
-    computerGuesser(lower, upper, round);
   }
 
 }
